@@ -63,6 +63,11 @@ namespace Password_Generator
         {
             this.pwOutput.Text = CreateKey(Convert.ToInt32(pwLength.Value)).ToString();
         }
+               
+        private void pwCopy_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(pwOutput.Text);
+        }
 
         private string pwSelections()
         {
@@ -86,11 +91,6 @@ namespace Password_Generator
         {
             pwCheckboxValidate();
             this.pwOutput.Text = CreateKey(Convert.ToInt32(pwLength.Value)).ToString();
-        }
-
-        private void pwCopy_Click(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(pwOutput.Text);
         }
 
         private void pwNumber_Change(object sender, RoutedEventArgs e)
