@@ -15,10 +15,12 @@ namespace Password_Generator
             charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 
             charSymbol = "!@#$%^&*()_+-=./?", 
             charNumber = "1234567890";
-        bool passMode = false;
+        
         internal static readonly string[] words =
 {
     "trains","utopian","extra-large","sable","frail","lush","direction","remove","comfortable","observe","mailbox","ceaseless","enchanting","wonderful","arch","annoy","callous","haunt","meddle","fire","sassy","slimy","capricious","unwritten","doctor","rhyme","prepare","blot","peep","gainful","wind","delight","settle","torpid","soak","whisper","stick","long-term","paint","holistic","launch","pop","chicken","stream","nine","reward","illegal","late","friends","sheet","ragged","yell","woebegone","respect","jazzy","toes","program","peaceful"};
+
+bool passMode = false;
 
         public MainWindow()
         {
@@ -62,13 +64,13 @@ namespace Password_Generator
 
         private string GenerateRandomWords(int pwLength)
         {       
-            byte[] data = new byte[4 * pwLength]; // Change 5 to word count            
+            byte[] data = new byte[4 * pwLength];            
             using (var crypto = RandomNumberGenerator.Create())
             {
                 crypto.GetBytes(data);                
             }
             string output = "";
-            for (int i = 0; i < pwLength; i++) // Change 5 to word count
+            for (int i = 0; i < pwLength; i++)
             {
                 var rnd = BitConverter.ToUInt32(data, i * 4);
                 var idx = rnd % words.Length;
