@@ -1,2 +1,3 @@
 # Password Generator
-WPF Application for generating a random password string with options for casing, numbers or special characters.
+WPF application for generating a random password with options for casing, numbers or special characters.
+-Added passphrase generator with uppercase first letter or additional number options.
