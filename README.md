@@ -1,2 +1,2 @@
 # Password Generator
-WPF Application in Visual Studio created from programming challenges list
+WPF Application for generating a random password string with options for casing, numbers or special characters.
